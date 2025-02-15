@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Productivity Extension</title>
+  <script src="popup.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      padding: 20px;
+      width: 320px;
+      text-align: center;
+      color: white;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin: 8px 0;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    input, textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    #stats, #notes {
+      background: #282a36;
+      padding: 12px;
+      border-radius: 5px;
+      margin-top: 12px;
+      text-align: left;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+    h1, h2 {
+      color: #ffcc00;
+      font-size: 18px;
+    }
+    .container {
+      background: #2c2f40;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ad Blocker</h1>
+    <h2>Click below to enable/disable ad blocking</h2>
+    <button id="toggleAdBlock">Toggle Ad Block</button>
+    <input type="text" id="customFilter" placeholder="Block domain (e.g., example.com)">
+    <button id="addFilter">Add Filter</button>
+    <h2>Filters Added: <span id="filterCount">0</span></h2>
+    <div id="filters"></div>
+    <div id="blockedAdsCount"></div>
+  </div>
+  
+
+  <div class="container">
+    <h1>Productivity Stats</h1>
+    <h2>Check how much time you spent on each website</h2>
+    <button id="showStats">Show Productivity Stats</button>
+    <div id="stats"></div>
+  </div>
+
+  <div class="container">
+    <h1>Tab Management</h1>
+    <h2>Group and Reset your tabs</h2>
+    <button id="toggleManageTabs">Enable/Disable Tab Management</button>
+    <button id="manageTabs">Group Tabs</button>
+    <button id="resetTabs">Reset Tabs</button>
+  </div>
+
+  <div class="container">
+    <h1>Notes</h1>
+    <h2>Save your important notes here</h2>
+    <textarea id="noteText" placeholder="Write your note here..."></textarea>
+    <button id="saveNote">Save Note</button>
+    <div id="notes"></div>
+  </div>
+</body>
+</html>
